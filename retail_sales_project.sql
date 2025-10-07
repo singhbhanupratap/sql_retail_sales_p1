@@ -17,27 +17,19 @@ create table  retail_sales
 
     );
     
-create table  dfsdf
-	(
-    transactions_id int primary key,
-	sale_date	date,
-    sale_time	time,
-    customer_id	int,
-    gender	varchar(20),
-    age	int,
-    category varchar(20),
-    quantiy	int,
-    price_per_unit	float,
-    cogs	float,
-    total_sale float
-
-    );
+   -- Data Exploration & Cleaning---------------------------------------------------------------------------------------------------------------------
    
+    -- How many sales we have 
    select count(*) from retail_sales;
-   select * from retail_sales;
+   
+   -- How many different customers we have ?
+   
+   select  count(distinct customer_id) as number_of_customers from retail_sales ;
+   
+   -- Different categories that we have 
+   select distinct category from retail_sales;
    
    
-   -- Data cleaning---------------------------------------------------------------------------------------------------------------------
 		 SELECT
     COUNT(*) AS total_rows,
     COUNT(transactions_id) AS count_transaction_ids,
@@ -55,20 +47,8 @@ FROM
     retail_sales;
    
    
-   -- Data Exploration ---------------------------------------------------------------------------------------------------------------------
-   
-   -- How many sales we have 
-   select count(*) from retail_sales;
-   
-   -- How many different customers we have ?
-   
-   select  count(distinct customer_id) as number_of_customers from retail_sales ;
-   
-   -- Different categories that we have 
-   select distinct category from retail_sales;
-   
-   
-   -- Data Analysis & Buisness Key Problems & Answers
+    
+   -- Data Analysis & Buisness Key Problems & Answers ---------------------------------------------------------------------------------------------------------------------
    -- My Analysis & Findings
 -- Q.1 Write a SQL query to retrieve all columns for sales made on '2022-11-05
 -- Q.2 Write a SQL query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 10 in the month of Nov-2022
